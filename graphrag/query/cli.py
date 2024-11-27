@@ -21,8 +21,8 @@ from graphrag.query.input.loaders.dfs import (
 from graphrag.vector_stores import VectorStoreFactory, VectorStoreType
 from graphrag.vector_stores.lancedb import LanceDBVectorStore
 
-from .factories import get_global_search_engine, get_local_search_engine
-from .indexer_adapters import (
+from factories import get_global_search_engine, get_local_search_engine
+from indexer_adapters import (
     read_indexer_covariates,
     read_indexer_entities,
     read_indexer_relationships,
@@ -117,6 +117,7 @@ def run_global_search(
 
     result = search_engine.search(query=query)
 
+    reporter.success(f"Global Search Response: {result}")
     reporter.success(f"Global Search Response: {result.response}")
     return result.response
 
