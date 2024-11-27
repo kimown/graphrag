@@ -6,7 +6,7 @@
 import argparse
 from enum import Enum
 
-from .cli import run_global_search, run_local_search
+from cli import run_global_search, run_local_search
 
 INVALID_METHOD_ERROR = "Invalid method"
 
